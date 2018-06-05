@@ -2,7 +2,10 @@ package cn.imcompany.test;
 
 import cn.imcompany.lazy.LazyOne;
 import cn.imcompany.lazy.LazyThree;
+import cn.imcompany.lazy.LazyTwo;
 
+import java.io.*;
+import java.lang.reflect.Constructor;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -18,12 +21,19 @@ public class LazyTest {
     public static void main(String[] args) throws Exception {
 
         // testThreadSafeGetInstance();
-        testThreadSafe();
-/*
+        // testThreadSafe();
+        // testSynchronized();
+
+        // testCloneSingleton();
+
+        // testReflectSingleton();
+        testSerializableSingleton();
+    }
+
+    private static void testSerializableSingleton() throws Exception {
 
         LazyThree lazyThree = LazyThree.getInstance();
 
-        // LazyThree lazyThree1 = constructor.newInstance(null);
         File file = new File(LazyTest.class.getResource("").getPath() + "/serializable.txt");
         FileOutputStream fps = new FileOutputStream(file);
         ObjectOutputStream oos = new ObjectOutputStream(fps);
@@ -39,40 +49,42 @@ public class LazyTest {
 
         System.out.println(lazyThree == lazyThreeSerializable);
 
+    }
+
+    private static void testReflectSingleton() throws Exception {
+
         Constructor<LazyThree> constructor = LazyThree.class.getDeclaredConstructor(null);
-        // constructor.setAccessible(true);
-        // LazyThree lazyThree = constructor.newInstance(null)
-        PropertyDescriptor descriptor = new PropertyDescriptor("inintial", LazyThree.class);
-        descriptor.getWriteMethod().invoke(LazyThree.class, false);
-        LazyThree lazyThree2 = constructor.newInstance();
-        System.out.println(lazyThree == lazyThree2);
+        constructor.setAccessible(true);
+        LazyThree lazyThreeReflect = constructor.newInstance(null);
 
-        LazyOne instance = LazyOne.getInstance();
+        LazyThree lazyThree = LazyThree.getInstance();
+        System.out.println(lazyThree == lazyThreeReflect);
 
-        // IntStream.range(1, 100).forEach(
-        //          i -> new Thread(() -> System.out.println(LazyOne.getInstance())).start()
-        // );
+    }
 
+    private static void testCloneSingleton() throws Exception {
+
+        LazyThree lazyThree = LazyThree.getInstance();
+        LazyThree clone = (LazyThree) lazyThree.clone();
+
+        System.out.println(lazyThree == clone);
+
+    }
+
+    private static void testSynchronized() {
         long start = System.currentTimeMillis();
-        for (int i = 0; i < 200000000; i++) {
-
-            // new Thread(()-> System.out.println(LazyOne.getInstance())).start();
+        int count = 2_000_000;
+        for (int i = 0; i < count; i++) {
             LazyOne.getInstance();
         }
         System.out.println("LazyOne use: " + (System.currentTimeMillis() - start) + "ms");
-        // System.out.println(instance);
 
 
         long start2 = System.currentTimeMillis();
-        for (int i = 0; i < 200000000; i++) {
-
-            // new Thread(()-> System.out.println(LazyOne.getInstance())).start();
-            LazyTwo lazyTwo = LazyTwo.getInstance();
+        for (int i = 0; i < count; i++) {
+            LazyTwo.getInstance();
         }
         System.out.println("LazyTwo use: " + (System.currentTimeMillis() - start2) + "ms");
-        // System.out.println(instance);
-*/
-
     }
 
     private static void testThreadSafe() {
@@ -80,16 +92,14 @@ public class LazyTest {
         CountDownLatch countDownLatch = new CountDownLatch(100);
         IntStream.range(0, 100).forEach(
                 i -> {
-                    new Thread(() -> {
-                        try {
-                            countDownLatch.await(10000, TimeUnit.MILLISECONDS);
-                            System.out.println(LazyThree.getInstance());
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }).start();
+                    new Thread(() -> System.out.println(LazyOne.getInstance())).start();
                     countDownLatch.countDown();
                 });
+        try {
+            countDownLatch.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     private static void testThreadSafeGetInstance() {
