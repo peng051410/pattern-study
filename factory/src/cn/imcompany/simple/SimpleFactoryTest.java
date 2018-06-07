@@ -7,8 +7,7 @@ package cn.imcompany.simple;
 public class SimpleFactoryTest {
 
     public static void main(String[] args) {
-        SimpleFactory simp = new SimpleFactory();
-        System.out.println(simp.getBeer("青岛"));
+        System.out.println(SimpleFactory.getBeer("青岛"));
     }
 
 }

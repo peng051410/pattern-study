@@ -12,7 +12,7 @@ import cn.imcompany.QingDao;
  */
 public class SimpleFactory {
 
-    public Beer getBeer(String name) {
+    public static Beer getBeer(String name) {
         if ("青岛".equals(name)) {
             return new QingDao();
         } else if ("百威".equals(name)) {
