@@ -1,4 +1,7 @@
-package cn.imcompany;
+package cn.imcompany.test;
+
+import cn.imcompany.Beer;
+import cn.imcompany.QingDao;
 
 /**
  * Created by tomyli on 2018/5/28.
