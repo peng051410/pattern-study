@@ -15,13 +15,15 @@ public class SimpleTest {
 
         Apple apple = new Apple();
         apple.name = "apple";
+        apple.weight = 2.23;
         apple.list = new ArrayList<>();
 
         try {
             Apple clone = (Apple)apple.clone();
             System.out.println(clone == apple);
-            System.out.println(clone.name.equals(apple.name));
             System.out.println(clone.list == apple.list);
+            System.out.println(clone.name.equals(apple.name));
+            System.out.println(clone.weight == apple.weight);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -37,8 +39,6 @@ public class SimpleTest {
         str = str.replaceAll(", $", "");
         System.out.println(str);  // "lorem, ipsum, dolor"
 
-        char[] a = null;
-        System.out.println(a);
     }
 
 }

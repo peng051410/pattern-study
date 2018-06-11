@@ -9,6 +9,7 @@ import java.util.List;
 public class Apple implements Cloneable {
 
     public String name;
+    public double weight;
     public List<Stone> list;
 
     @Override
