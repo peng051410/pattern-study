@@ -11,7 +11,7 @@ public class AirPlane implements AirplaneManager {
     }
 
     @Override
-    public void tackoff() {
+    public void takeoff() {
         System.out.println("LongDistanceTakeOff");
     }
 

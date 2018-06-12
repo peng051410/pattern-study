@@ -13,7 +13,7 @@ public class AirPlaneContext {
     }
 
     public void tackoff() {
-        airplaneManager.tackoff();
+        airplaneManager.takeoff();
     }
 
     public void fly() {

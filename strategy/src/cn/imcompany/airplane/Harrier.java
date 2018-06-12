@@ -12,7 +12,7 @@ public class Harrier implements AirplaneManager {
     }
 
     @Override
-    public void tackoff() {
+    public void takeoff() {
         System.out.println("VerticalTakeOff");
     }
 

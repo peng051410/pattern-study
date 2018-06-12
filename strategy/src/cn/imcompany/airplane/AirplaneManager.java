@@ -9,7 +9,7 @@ public interface AirplaneManager {
     /**
      * 起飞
      */
-    void tackoff();
+    void takeoff();
 
     /**
      * 飞行
