@@ -7,7 +7,7 @@ package cn.imcompany.function;
 public class FunctionFactoryTest {
 
     public static void main(String[] args) {
-        FunctionFactory jinShiBaiFactory = new JinShiBaiFactory();
+        BeerFactory jinShiBaiFactory = new JinShiBaiFactory();
         System.out.println(jinShiBaiFactory.getBeer());
     }
 

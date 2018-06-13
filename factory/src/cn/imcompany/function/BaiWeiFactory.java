@@ -7,7 +7,7 @@ import cn.imcompany.Beer;
  * Created by tomyli on 2018/5/28.
  * Github: https://github.com/peng051410
  */
-public class BaiWeiFactory extends FunctionFactory {
+public class BaiWeiFactory extends BeerFactory {
 
     @Override
     public Beer getBeer() {

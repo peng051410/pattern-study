@@ -8,5 +8,4 @@ public interface Beer {
 
     String getName();
 
-
 }

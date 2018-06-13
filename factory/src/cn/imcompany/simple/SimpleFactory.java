@@ -6,7 +6,7 @@ import cn.imcompany.JinShiBai;
 import cn.imcompany.QingDao;
 
 /**
- * 一个工厂什么都生产,根据传入的参数来返回不的产品
+ * 一个工厂什么都生产,根据传入的参数来返回不同的产品
  * Created by tomyli on 2018/5/28.
  * Github: https://github.com/peng051410
  */

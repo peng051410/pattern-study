@@ -8,7 +8,7 @@ public class AbstractFactoryTest {
 
     public static void main(String[] args) {
 
-        BeerFactory beerFactory = new BeerFactory();
+        AbstractBeerFactory beerFactory = new ConcreteBeerFactory();
         System.out.println(beerFactory.getBaiWei());
     }
 
