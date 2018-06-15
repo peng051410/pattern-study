@@ -10,5 +10,4 @@ public class FunctionFactoryTest {
         BeerFactory jinShiBaiFactory = new JinShiBaiFactory();
         System.out.println(jinShiBaiFactory.getBeer());
     }
-
 }
