@@ -12,12 +12,12 @@ public abstract class AbstractMemberService implements IMemberService {
 
     @Override
     public boolean isGirl() {
-        return true;
+        return false;
     }
 
     @Override
     public boolean isBoy() {
-        return false;
+        return true;
     }
 
     @Override

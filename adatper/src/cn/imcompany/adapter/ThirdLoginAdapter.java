@@ -15,18 +15,21 @@ public class ThirdLoginAdapter implements ThirdLogin {
     @Override
     public void wechatLogin(String accessToken) {
 
+        System.out.println("微信获取用户信息");
         loginService.login(accessToken, null);
     }
 
     @Override
     public void qqLogin(String accessToken) {
 
+        System.out.println("qq获取用户信息");
         loginService.login(accessToken, null);
     }
 
     @Override
     public void sinaLogin(String accessToken) {
 
+        System.out.println("微博获取用户信息");
         loginService.login(accessToken, null);
     }
 }
