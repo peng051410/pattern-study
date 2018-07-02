@@ -5,6 +5,7 @@ package cn.imcompany.decorator.encrypt;
  * Github: https://github.com/peng051410
  */
 public class ModEncryptDecorator extends EncryptDecorator {
+
     public ModEncryptDecorator(Encryptor encrypt) {
         super(encrypt);
     }
@@ -15,7 +16,7 @@ public class ModEncryptDecorator extends EncryptDecorator {
         modEncrypt();
     }
 
-    public void modEncrypt() {
+    private void modEncrypt() {
         System.out.println("取模加密！");
     }
 }

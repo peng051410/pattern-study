@@ -5,6 +5,7 @@ package cn.imcompany.decorator.encrypt;
  * Github: https://github.com/peng051410
  */
 public class SimpleEncryptDecorator extends EncryptDecorator {
+
     public SimpleEncryptDecorator(Encryptor encrypt) {
         super(encrypt);
     }
@@ -15,7 +16,7 @@ public class SimpleEncryptDecorator extends EncryptDecorator {
         simpleEncrypt();
     }
 
-    public void simpleEncrypt() {
+    private void simpleEncrypt() {
         System.out.println("简单加密！");
     }
 }

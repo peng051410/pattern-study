@@ -5,6 +5,7 @@ package cn.imcompany.decorator.encrypt;
  * Github: https://github.com/peng051410
  */
 public class ConverseEncryptDecorator extends EncryptDecorator {
+
     public ConverseEncryptDecorator(Encryptor encrypt) {
         super(encrypt);
     }
@@ -15,7 +16,7 @@ public class ConverseEncryptDecorator extends EncryptDecorator {
         converseEncrypt();
     }
 
-    public void converseEncrypt() {
+    private void converseEncrypt() {
         System.out.println("逆向加密！");
     }
 }
