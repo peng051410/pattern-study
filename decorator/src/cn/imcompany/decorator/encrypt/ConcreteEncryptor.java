@@ -8,6 +8,6 @@ public class ConcreteEncryptor implements Encryptor {
 
     @Override
     public void encrypt() {
-        System.out.println("one encrypt!");
+        System.out.println("base encrypt!");
     }
 }
