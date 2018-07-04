@@ -25,13 +25,9 @@ public class ConcrectBuyer implements Buyer {
     }
 
     @Override
-    public void disject() {
+    public void sad() {
 
-        System.out.println("disject");
+        System.out.println(this.getName() + ":sad");
     }
 
-    @Override
-    public void change(Stock stock) {
-        stock.goUp(this.getName());
-    }
 }

@@ -8,20 +8,23 @@ public class StockTest {
 
     public static void main(String[] args) {
 
-        NiuStock niuStock = new NiuStock();
+        ConcreteStockSoft niuStock = new ConcreteStockSoft();
 
-        ConcrectBuyer buyer, buyer1, soft;
-        buyer = new ConcrectBuyer();
-        buyer.setName("buyer");
+        ConcrectBuyer buyer1, buyer2, buyer3;
         buyer1 = new ConcrectBuyer();
         buyer1.setName("buyer1");
-        soft = new ConcrectBuyer();
-        soft.setName("soft");
+        buyer2 = new ConcrectBuyer();
+        buyer2.setName("buyer2");
+        buyer3 = new ConcrectBuyer();
+        buyer3.setName("buyer3");
 
-        niuStock.buy(buyer);
-        niuStock.buy(buyer1);
-        niuStock.buy(soft);
+        niuStock.join(buyer1);
+        niuStock.join(buyer2);
+        niuStock.join(buyer3);
 
-        soft.change(niuStock);
+        niuStock.goUp();
+
+        niuStock.quit(buyer1);
+        niuStock.goDown();
     }
 }

@@ -7,30 +7,32 @@ import java.util.List;
  * Created by tomyli on 2018/6/23.
  * Github: https://github.com/peng051410
  */
-public class NiuStock implements Stock {
+public class ConcreteStockSoft implements StockSoft {
 
     private List<Buyer> buyerList;
 
-    public NiuStock() {
+    public ConcreteStockSoft() {
         this.buyerList = new ArrayList<>();
     }
 
-    public void buy(Buyer buyer) {
+    public void join(Buyer buyer) {
         buyerList.add(buyer);
     }
 
-    public void sale(Buyer buyer) {
+    public void quit(Buyer buyer) {
         buyerList.remove(buyer);
     }
 
     @Override
-    public void goUp(String name) {
-        buyerList.stream().filter(buyer -> !buyer.getName().equals(name))
-                .forEach(Buyer::happy);
+    public void goUp() {
+
+        buyerList.forEach(Buyer::happy);
     }
 
     @Override
     public void goDown() {
-        buyerList.forEach(Buyer::disject);
+
+        buyerList.forEach(Buyer::sad);
     }
 }
+

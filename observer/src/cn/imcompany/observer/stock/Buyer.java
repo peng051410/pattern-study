@@ -12,7 +12,7 @@ public interface Buyer {
 
     void happy();
 
-    void disject();
+    void sad();
 
-    void change(Stock stock);
+
 }
