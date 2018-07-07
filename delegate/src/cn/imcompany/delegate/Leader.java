@@ -9,7 +9,6 @@ public class Leader implements Member {
     private Member developerA;
     private Member developerB;
 
-
     public void setDeveloperA(Member developerA) {
         this.developerA = developerA;
     }

@@ -6,19 +6,6 @@ package cn.imcompany.delegate;
  */
 public class Boss implements Member {
 
-    private Leader leader;
-
-    public Boss() {
-    }
-
-    public Boss(Leader leader) {
-        this.leader = leader;
-    }
-
-    public void setLeader(Leader leader) {
-        this.leader = leader;
-    }
-
     @Override
     public void showName() {
         System.out.println("i am boss");
