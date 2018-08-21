@@ -12,7 +12,7 @@ public class AirPlaneContext {
         this.airplaneManager = airplaneManager;
     }
 
-    public void tackoff() {
+    public void takeoff() {
         airplaneManager.takeoff();
     }
 

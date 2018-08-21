@@ -10,7 +10,7 @@ public class AirPlaneTest {
 
         AirPlaneContext context = new AirPlaneContext();
         context.setAirplaneManager(new Fighter());
-        context.tackoff();
+        context.takeoff();
         context.fly();
     }
 
